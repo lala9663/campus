@@ -39,4 +39,5 @@ public class MemberController {
     }
 // 1. 해당 이메일이 없을때
 //  2. 비밀번호 틀렸을때
+    //
 }
