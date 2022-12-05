@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.coin.mapper.MemberMapper">
+    
+   <insert id="join" parameterType="HashMap">
+        Insert INTO member
+        (email, password, name, phone, address, detail)
+        VALUES
+        (#{email}, #{password}, #{name}, #{phone}, #{address}, #{detail})
+   </insert>
+
+    <select id="login" parameterType="String" resultType="HashMap">
+
+    SELECT
+        email
+        ,password
+    FROM
+        member
+    WHERE
+        email =
+        #{email}
+
+    </select>
+
+
+
+
+    <insert id="charge" parameterType="HashMap">
+        INSERT INTO payment
+        (id, email, amount, uid)
+        VALUES
+        (#{id}, #{email}, #{amount}, #{uid})
+    </insert>
+
+
+
+</mapper>
