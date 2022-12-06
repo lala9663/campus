@@ -29,15 +29,23 @@ public class MemberController {
     public String login(@RequestParam HashMap<String,String> params, HttpSession session) {
         System.out.println(params.get("email"));
         String email = params.get("email");
+        String password = params.get("password");
+        String view = "index";
+
         HashMap<String,String> member = ts.loginTodo(email);
-        if (params.get("password").equals(member.get("password"))){
+        if (password.equals(member.get("password"))){
             session.setAttribute("email", email);
             System.out.println("로그인성공");
+        } else if (!password.equals(member.get("password"))){
+            System.out.println("비밀번호 틀렸습니다. 다시 로그인해주세요");
+            view = "login";
+        } else {
+            System.out.println("해당 이메일이 없습니다.");
+            view = "login";
         }
 
-        return "index";
+        return view;
     }
 // 1. 해당 이메일이 없을때
-//  2. 비밀번호 틀렸을때
-    //
+
 }
