@@ -19,4 +19,9 @@ public class MemberService {
     public HashMap<String,String> loginTodo(String send){
         return tr.loginTodo(send);
     }
+
+    public int subscribeTodo (HashMap<String,String> subscribeTodo){
+
+        return tr.subscribeTodo(subscribeTodo);
+    }
 }

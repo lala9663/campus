@@ -22,6 +22,10 @@ public class MemberRepository {
         return mapper.login(mail);
     }
 
+    public int subscribeTodo(HashMap<String, String> subscribeTodo) {
+
+        return mapper.subscribe(subscribeTodo);
+    }
 
 
 }

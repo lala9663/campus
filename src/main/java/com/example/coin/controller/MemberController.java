@@ -4,6 +4,7 @@ import com.example.coin.mapper.MemberMapper;
 import com.example.coin.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -39,7 +40,7 @@ public class MemberController {
         } else if (!password.equals(member.get("password"))){
             System.out.println("비밀번호 틀렸습니다. 다시 로그인해주세요");
             view = "login";
-        } else {
+        } else if (email.equals(member.get("email"))){
             System.out.println("해당 이메일이 없습니다.");
             view = "login";
         }
@@ -48,4 +49,11 @@ public class MemberController {
     }
 // 1. 해당 이메일이 없을때
 
+    @PostMapping("/subscribe")
+    public String subscribe(@RequestParam HashMap<String,String> params) {
+        System.out.println(params.get("email"));
+        ts.subscribeTodo(params);
+        System.out.println("구독하기");
+        return "redirect:/";
+    }
 }

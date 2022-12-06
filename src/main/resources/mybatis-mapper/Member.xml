@@ -24,7 +24,12 @@
     </select>
 
 
-
+    <insert id="subscribe" parameterType="HashMap">
+    INSERT INTO subscribe
+        (email)
+    VALUES
+        (#{email})
+    </insert>
 
     <insert id="charge" parameterType="HashMap">
         INSERT INTO payment
