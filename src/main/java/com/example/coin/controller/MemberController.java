@@ -54,7 +54,7 @@ public class MemberController {
             System.out.println("로그인안됨");
             return "login";
         }else if (ts.payTodo(params)>0){
-            ts.payTodo(params);
+//             ts.payTodo(params);
             System.out.println("충전성공");
             return "market";
         } else {
