@@ -20,10 +20,14 @@ public class MemberController {
     public String signup(@RequestParam HashMap<String,String> params) {
         System.out.println(params.get("name"));
         System.out.println(params.get("email"));
-        ts.joinTodo(params);
-        System.out.println("회원가입 성공");
-        return "login";
-    }
+        if(ts.joinTodo(params)>0){
+            System.out.println("회원가입 성공");
+            return "login";
+        }else{
+            System.out.println("회원가입 실패");
+            return "signup";
+        }
+     }
 
     @PostMapping("/login")
     public String login(@RequestParam HashMap<String,String> params, HttpSession session) {
