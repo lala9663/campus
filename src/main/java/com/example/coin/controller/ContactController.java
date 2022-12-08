@@ -22,4 +22,12 @@ public class ContactController {
         return "redirect:/";
     }
 
+    @PostMapping("/subscribe")
+    public String subscribe(@RequestParam HashMap<String,String> params) {
+        System.out.println(params.get("email"));
+        cs.subscribeTodo(params);
+        System.out.println("구독하기");
+        return "redirect:/";
+    }
+
 }

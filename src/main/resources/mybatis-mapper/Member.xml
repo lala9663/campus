@@ -23,21 +23,19 @@
 
     </select>
 
-
-    <insert id="subscribe" parameterType="HashMap">
-    INSERT INTO subscribe
-        (email)
-    VALUES
-        (#{email})
-    </insert>
-
     <insert id="charge" parameterType="HashMap">
         INSERT INTO payment
-        (id, email, amount, uid)
+         (email, amount, uid)
         VALUES
-        (#{id}, #{email}, #{amount}, #{uid})
+        (#{email}, #{amount}, #{uid})
     </insert>
 
+    <insert id="buy" parameterType="HashMap">
+        INSERT INTO buy
+        (email, coinId, name, price, amount, total)
+        VALUES
+            (#{email}, #{coinId}, #{name}, #{price}, #{amount}, #{total})
+    </insert>
 
 
 </mapper>

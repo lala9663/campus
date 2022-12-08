@@ -16,4 +16,9 @@ public class ContactService {
         return rs.contactTodo(contactTodo);
     }
 
+    public int subscribeTodo (HashMap<String,String> subscribeTodo){
+
+        return rs.subscribeTodo(subscribeTodo);
+    }
+
 }

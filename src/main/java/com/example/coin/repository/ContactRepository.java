@@ -17,4 +17,9 @@ public class ContactRepository {
         return mapper.contact(contactTodo);
     }
 
+    public int subscribeTodo(HashMap<String, String> subscribeTodo) {
+
+        return mapper.subscribe(subscribeTodo);
+    }
+
 }

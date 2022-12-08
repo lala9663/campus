@@ -15,15 +15,25 @@ public class PageController {
     }
 
     @GetMapping("goSignup")
-    public String signup() {
-        System.out.println("회원가입페이지");
-        return "signup";
+    public String signup(HttpSession session) {
+        if (session.getAttribute("email") == null) {
+            System.out.println("회원가입페이지");
+            return "signup";
+        } else {
+            System.out.println("로그인 한 상태입니다.");
+            return "redirect:/";
+        }
     }
 
     @GetMapping("goLogin")
-    public String login() {
-        System.out.println("로그인페이지");
-        return "login";
+    public String login(HttpSession session) {
+        if (session.getAttribute("email") == null){
+            System.out.println("로그인페이지");
+            return "login";
+        } else {
+            System.out.println("로그인 한 상태입니다.");
+            return "redirect:/";
+        }
     }
 
     @GetMapping("goPay")
@@ -44,7 +54,7 @@ public class PageController {
             System.out.println("로그인부터 해주세요");
             return "login";
         } else {
-            session.setAttribute("market", session.getAttribute("email"));
+            session.getAttribute("email");
             System.out.println("market으로 이동");
             return "market";
         }
@@ -56,7 +66,7 @@ public class PageController {
             System.out.println("로그인부터 해주세요");
             return "login";
         } else {
-            session.setAttribute("history", session.getAttribute("email"));
+            session.getAttribute("email");
             return "history";
         }
     }

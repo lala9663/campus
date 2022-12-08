@@ -11,4 +11,12 @@
             (#{name},#{email}, #{phone}, #{message})
     </insert>
 
+    <insert id="subscribe" parameterType="HashMap">
+        INSERT INTO subscribe
+            (email)
+        VALUES
+            (#{email})
+    </insert>
+
+
 </mapper>

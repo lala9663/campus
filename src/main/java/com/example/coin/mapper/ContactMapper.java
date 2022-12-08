@@ -9,4 +9,5 @@ public interface ContactMapper {
 
     int contact(HashMap<String,String> param);
 
+    int subscribe(HashMap<String,String> param);
 }

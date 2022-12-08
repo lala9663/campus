@@ -22,10 +22,9 @@ public class MemberRepository {
         return mapper.login(mail);
     }
 
-    public int subscribeTodo(HashMap<String, String> subscribeTodo) {
+    public int payTodo(HashMap<String, String> payTodo) {
 
-        return mapper.subscribe(subscribeTodo);
+        return mapper.pay(payTodo);
     }
-
 
 }

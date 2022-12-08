@@ -1,6 +1,5 @@
 package com.example.coin.controller;
 
-import com.example.coin.mapper.MemberMapper;
 import com.example.coin.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,11 +48,19 @@ public class MemberController {
     }
 // 1. 해당 이메일이 없을때
 
-    @PostMapping("/subscribe")
-    public String subscribe(@RequestParam HashMap<String,String> params) {
-        System.out.println(params.get("email"));
-        ts.subscribeTodo(params);
-        System.out.println("구독하기");
-        return "redirect:/";
+    @GetMapping("/point")
+    public String pay(@RequestParam HashMap<String, String> params, HttpSession session) {
+        if (session.getAttribute("email") == null){
+            System.out.println("로그인안됨");
+            return "login";
+        }else if (ts.payTodo(params)>0){
+            ts.payTodo(params);
+            System.out.println("충전성공");
+            return "market";
+        } else {
+            System.out.println("충전실패");
+            return "pay";
+        }
     }
+
 }
