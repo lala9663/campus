@@ -53,17 +53,19 @@ public class MemberController {
 // 1. 해당 이메일이 없을때
 
     @GetMapping("/point")
-    public String pay(@RequestParam HashMap<String, String> params, HttpSession session) {
-        if (session.getAttribute("email") == null){
-            System.out.println("로그인안됨");
-            return "login";
-        }else if (ts.payTodo(params)>0){
-//             ts.payTodo(params);
-            System.out.println("충전성공");
+    public String pay(@RequestParam HashMap<String, String>point, HttpSession session) {
+        if (session.getAttribute("email") != null){
+            String email=String.valueOf(session.getAttribute("email"));
+            point.put("email",email);
+            ts.payTodo(point);
             return "market";
-        } else {
+        }
+         else {
             System.out.println("충전실패");
-            return "pay";
+            return "pay"
+
+
+                    ;
         }
     }
 

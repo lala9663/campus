@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 
 @Service
-public class MemberService {
+public class
+MemberService {
 
     @Autowired
     MemberRepository tr;

@@ -12,8 +12,6 @@ public interface MemberMapper {
     HashMap<String,String> login(String email);
     // 반환타입 , 메소드명, 내가 입력해서 넘길 값(파라미터)
 
-    int pay(HashMap<String,String> param);
-
     int charge(HashMap<String,String> param);
 
 }

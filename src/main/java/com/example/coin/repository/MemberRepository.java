@@ -24,7 +24,7 @@ public class MemberRepository {
 
     public int payTodo(HashMap<String, String> payTodo) {
 
-        return mapper.pay(payTodo);
+        return mapper.charge(payTodo);
     }
 
 }
