@@ -1,4 +1,4 @@
-package com.example.coin.repository;
+package com.example.coin.member.repository;
 
 import com.example.coin.mapper.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;

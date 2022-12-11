@@ -1,6 +1,6 @@
-package com.example.coin.controller;
+package com.example.coin.contact.controller;
 
-import com.example.coin.service.ContactService;
+import com.example.coin.contact.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;

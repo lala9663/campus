@@ -1,6 +1,6 @@
-package com.example.coin.service;
+package com.example.coin.member.service;
 
-import com.example.coin.repository.MemberRepository;
+import com.example.coin.member.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

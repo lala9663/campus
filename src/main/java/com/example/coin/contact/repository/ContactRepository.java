@@ -1,4 +1,4 @@
-package com.example.coin.repository;
+package com.example.coin.contact.repository;
 
 import com.example.coin.mapper.ContactMapper;
 import org.springframework.beans.factory.annotation.Autowired;
