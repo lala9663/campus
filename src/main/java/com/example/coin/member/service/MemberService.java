@@ -4,6 +4,7 @@ import com.example.coin.member.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 @Service
@@ -24,6 +25,18 @@ MemberService {
     public int payTodo(HashMap<String, String> payTodo) {
         System.out.println(payTodo.toString());
         return tr.payTodo(payTodo);
+    }
+
+    public int hadBalance(String email) {
+        return tr.hadBalance(email);
+    }
+
+    public int moneyBalance(String email) {
+        return tr.moneyBalance(email);
+    }
+
+    public ArrayList<HashMap<String, Object>> havingBalance(String email) {
+        return tr.havingBalance(email);
     }
 
 }

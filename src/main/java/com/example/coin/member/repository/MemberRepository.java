@@ -4,6 +4,7 @@ import com.example.coin.mapper.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 @Repository
@@ -25,6 +26,17 @@ public class MemberRepository {
     public int payTodo(HashMap<String, String> payTodo) {
 
         return mapper.charge(payTodo);
+    }
+    public int hadBalance(String email) {
+        return mapper.hadBalance(email);
+    }
+
+    public int moneyBalance(String email) {
+        return mapper.moneyBalance(email);
+    }
+
+    public ArrayList<HashMap<String, Object>> havingBalance(String email) {
+        return mapper.havingBalance(email);
     }
 
 }
