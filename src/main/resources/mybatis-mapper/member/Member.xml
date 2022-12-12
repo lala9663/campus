@@ -28,6 +28,39 @@
         (#{email}, #{amount}, #{uid})
     </insert>
 
+    <select id="hadBalance" resultType="int">
+        SELECT
+            IFNULL(SUM(amount), 0)
+        FROM
+            payment
+        WHERE
+            email=#{email}
+    </select>
+
+    <select  id="havingBalance" parameterType="String" resultType="HashMap">
+        SELECT
+            coinId
+            ,IFNULL(SUM(amount), 0) amount
+        FROM
+            buy
+        WHERE
+            email = #{email} GROUP BY coinId
+    </select>
+
+    <select id="moneyBalance" parameterType="String" resultType="int">
+        SELECT (
+                IFNULL
+                    ((SELECT SUM(amount)
+                      FROM payment
+                      WHERE email = #{email}), 0) -
+                IFNULL
+                    ((SELECT SUM(total)
+                      FROM buy
+                      WHERE email = #{email}), 0)
+                   ) rest
+        FROM DUAL
+    </select>
+
 
 
 </mapper>
