@@ -23,10 +23,6 @@ public class MemberRepository {
         return mapper.login(mail);
     }
 
-    public int payTodo(HashMap<String, String> payTodo) {
-
-        return mapper.charge(payTodo);
-    }
     public int hadBalance(String email) {
         return mapper.hadBalance(email);
     }

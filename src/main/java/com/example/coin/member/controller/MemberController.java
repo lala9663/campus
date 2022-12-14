@@ -54,18 +54,6 @@ public class MemberController {
     }
 // 1. 해당 이메일이 없을때
 
-    @GetMapping("/point")
-    public String pay(@RequestParam HashMap<String, String> point, HttpSession session) {
-        if (session.getAttribute("email") != null) {
-            String email = String.valueOf(session.getAttribute("email"));
-            point.put("email", email);
-            ts.payTodo(point);
-            return "market";
-        } else {
-            System.out.println("충전실패");
-            return "pay";
-        }
-    }
 
     @GetMapping("/hadBalance")
     public @ResponseBody int hadBalance(HttpSession session) {
