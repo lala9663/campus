@@ -15,7 +15,7 @@ public class CoinService {
 
     public int buy(HashMap<String, String> params) {
 
-        return repo.buy(params);
+        return repo.buy(params)d;
     }
 
     public ArrayList<HashMap<String, Object>> selectBuy(String email) {
