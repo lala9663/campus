@@ -25,7 +25,6 @@
             email=#{email}
         order by
             indate DESC
-
     </select>
 
 
