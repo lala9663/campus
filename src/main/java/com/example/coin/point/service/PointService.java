@@ -13,6 +13,9 @@ public class PointService {
     @Autowired
     PointRepository repo;
 
+    public int insertPoint(HashMap<String, String> point) {
+        return repo.insertPoint(point);
+    }
     public double checkBalance(String email) {
         return repo.checkBalance(email);
     }

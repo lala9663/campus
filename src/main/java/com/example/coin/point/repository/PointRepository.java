@@ -13,6 +13,10 @@ public class PointRepository {
     @Autowired
     PointMapper mapper;
 
+    public int insertPoint(HashMap<String, String> point) {
+        return mapper.insertPoint(point);
+    }
+
     public double checkBalance(String email) {
         return mapper.checkBalance(email);
     }

@@ -22,11 +22,6 @@ MemberService {
         return tr.loginTodo(send);
     }
 
-    public int payTodo(HashMap<String, String> payTodo) {
-        System.out.println(payTodo.toString());
-        return tr.payTodo(payTodo);
-    }
-
     public int hadBalance(String email) {
         return tr.hadBalance(email);
     }

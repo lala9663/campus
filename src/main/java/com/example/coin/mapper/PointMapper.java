@@ -8,8 +8,8 @@ import java.util.HashMap;
 @Mapper
 public interface PointMapper {
 
+    int insertPoint(HashMap<String, String> point);
     double checkBalance(String email);
-
     ArrayList<HashMap<String, Object>> selectPoint(String email);
 
 }

@@ -1,6 +1,8 @@
 package com.example.coin.member.controller;
 
 import com.example.coin.member.service.MemberService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,12 +14,14 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+@Api(tags = {"로그인"}, description = "로그인 관련 서비스")
 @Controller
 public class MemberController {
 
     @Autowired
     MemberService ts;
 
+    @ApiOperation(value = "회원가입", notes = "회원가입한다.")
     @PostMapping("/signup")
     public String signup(@RequestParam HashMap<String, String> params) {
         System.out.println(params.get("name"));
@@ -31,6 +35,7 @@ public class MemberController {
         }
     }
 
+    @ApiOperation(value = "로그인", notes = "로그인을한다")
     @PostMapping("/login")
     public String login(@RequestParam HashMap<String, String> params, HttpSession session) {
         System.out.println(params.get("email"));
@@ -54,18 +59,6 @@ public class MemberController {
     }
 // 1. 해당 이메일이 없을때
 
-    @GetMapping("/point")
-    public String pay(@RequestParam HashMap<String, String> point, HttpSession session) {
-        if (session.getAttribute("email") != null) {
-            String email = String.valueOf(session.getAttribute("email"));
-            point.put("email", email);
-            ts.payTodo(point);
-            return "market";
-        } else {
-            System.out.println("충전실패");
-            return "pay";
-        }
-    }
 
     @GetMapping("/hadBalance")
     public @ResponseBody int hadBalance(HttpSession session) {
