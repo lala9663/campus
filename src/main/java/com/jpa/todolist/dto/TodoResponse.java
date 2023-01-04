@@ -1,6 +1,6 @@
 package com.jpa.todolist.dto;
 
-import com.sun.tools.javac.comp.Todo;
+import com.jpa.todolist.entity.Todo;
 import lombok.*;
 
 @Getter
@@ -13,7 +13,7 @@ public class TodoResponse {
     private String todos;
 
     public TodoResponse(Todo todo) {
-        this.id = String.valueOf(todo.ge);
+        this.id = String.valueOf(todo.getId());
         this.todos = todo.getTodos();
     }
 

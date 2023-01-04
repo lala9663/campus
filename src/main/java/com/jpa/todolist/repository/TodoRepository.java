@@ -1,6 +1,6 @@
 package com.jpa.todolist.repository;
 
-import com.sun.tools.javac.comp.Todo;
+import com.jpa.todolist.entity.Todo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

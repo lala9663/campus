@@ -8,13 +8,12 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "todo")
 @Builder
 @Entity
-public class Todo {
-
+public class Todo{
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
